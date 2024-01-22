@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <bean id="employee" class="usingXml.Employee">
+ <property name="eid" value="1"/>
+ <property name="ename" value="AKshay"/>
+ <property name="eage" value="21"/>
+ <property name="department" value="Software"/>
+ <property name="salary" value="35666"/>
+ </bean>
+ 
+ <bean id="employee2" class="usingXml.Employee">
+ <property name="eid" value="2"/>
+ <property name="ename" value="Reddy"/>
+ <property name="eage" value="22"/>
+ <property name="department" value="Software Engineer"/>
+ <property name="salary" value="5666"/>
+ </bean>
+ 
+ 
+ <bean id="employeeService" class="usingXml.EmployeeServices">
+ <property name="employeeList" >
+ <list>
+ <ref bean="employee"/>
+ <ref bean="employee2"/>
+ </list>
+ </property>
+ 
+ </bean>
+ </beans>
